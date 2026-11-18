@@ -1,0 +1,465 @@
+{
+  "project": "Unified Multi-Regime Motor Imagery EEG Calibration & Error-Redistribution Study",
+  "authors": [
+    {
+      "name": "Ziyuan Zhu",
+      "orcid": "0009-0005-1153-4926",
+      "email": "zzy2630816871@gmail.com",
+      "corresponding": true
+    },
+    {
+      "name": "Sihao Liu"
+    },
+    {
+      "name": "Haoyang Yu"
+    }
+  ],
+  "affiliation": "College of Artificial Intelligence Medicine, Chongqing Medical University, Chongqing 400016, China",
+  "source_repositories": {
+    "cross-subject-mi-eeg": {
+      "url": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "inspected_branches_count": 35
+    },
+    "few-shot-mi-eeg": {
+      "url": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "inspected_branches_count": 4
+    },
+    "research3": {
+      "url": "https://github.com/jackzhu119/research3",
+      "inspected_branches_count": 47
+    }
+  },
+  "total_archived_files": 43,
+  "files": [
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/ELIGIBLE_V3_RESULTS_20261018/audits/external/neural_recomputed_condition_summaries.csv",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1A_ELIGIBLE_V3_neural_condition_summaries.csv",
+      "size_bytes": 24424,
+      "sha256": "688f2cec8df47fc3e36d121b20ad9b3aaf082cd688f6373c001f28ba873c25e5"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/ELIGIBLE_V3_RESULTS_20261018/audits/external/neural_recomputed_comparisons.csv",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1A_ELIGIBLE_V3_neural_comparisons.csv",
+      "size_bytes": 1673,
+      "sha256": "2d915e09bbc2e1500b1fbd06dd42aeba07d6ee39b2d5962b397ddb85ef8b5af9"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/ELIGIBLE_V3_RESULTS_20261018/audits/external/neural_recomputed_paired_differences.csv",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1A_ELIGIBLE_V3_neural_paired_differences.csv",
+      "size_bytes": 27025,
+      "sha256": "9cbea76c53ac5ecbd43ade77b7244f129e5220d06bf99b3e452b46462042177a"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/ELIGIBLE_V3_RESULTS_20261018/audits/external/csp_recomputed_condition_summaries.csv",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1A_ELIGIBLE_V3_csp_condition_summaries.csv",
+      "size_bytes": 1576,
+      "sha256": "c078da45b9660bea19add8b7bfcad1cf2dc1fa391647fe9c6d3f6b3c842b6b6a"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/ELIGIBLE_V3_RESULTS_20261018/RESULTS_REVIEW_zh.md",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1A_ELIGIBLE_V3_RESULTS_REVIEW_zh.md",
+      "size_bytes": 4132,
+      "sha256": "eb366c2c698c78c2d6f8303eedca5e3e661042424110321645cf33d532a68d4e"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/PAPER1_IJBET_20261029/evidence/objective_results_table.json",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1B_risk_v1_objective_results_table.json",
+      "size_bytes": 23939,
+      "sha256": "9cf6672b6e1793f5d9767a965a1ea8874f2ac21ffebf7f207fc29f4c920af1ac"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/PAPER1_IJBET_20261029/figure_data/Fig1_primary_participant_changes.csv",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1A_Dreyer85_primary_participant_changes.csv",
+      "size_bytes": 7574,
+      "sha256": "7249b7d8c6aed0308d7ba0da379609f2b127a5361a3d53fff9ed9c2478293fef"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/PAPER1_IJBET_20261029/figure_data/Fig2_objective_profiles.csv",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1B_risk_v1_objective_profiles.csv",
+      "size_bytes": 3110,
+      "sha256": "c132302d9a993e6cd11cc3d985f40cc4ed408371106317bb03d63e4686da17db"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/PAPER1_IJBET_20261029/figure_data/Study2_nested_outer_source.json",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1B_risk_v1_nested_outer_source.json",
+      "size_bytes": 26969,
+      "sha256": "b0d87425734d8b10a894470fdad9980bceddef11a89a283cf758c74be33cf3d4"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/PAPER1_IJBET_20261029/figure_data/Study2_external_fixed40_source.json",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1B_risk_v1_external_fixed40_source.json",
+      "size_bytes": 11976,
+      "sha256": "ee98379a254d82684519680bff6dfc1ea81754f3aa1001426942f756ec71f5cf"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/main",
+      "commit_sha": "c4ea1f4ee1d078bcb015922f8092f05e263f2399",
+      "source_relative_path": "research_runs/PAPER1_IJBET_20261029/supporting_data/Study1_frozen_comparisons.csv",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1A_frozen_comparisons.csv",
+      "size_bytes": 1673,
+      "sha256": "2d915e09bbc2e1500b1fbd06dd42aeba07d6ee39b2d5962b397ddb85ef8b5af9"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/hpc/paper1-composition-v2",
+      "commit_sha": "38d3f71527b50ead4116165ec320613282e30ce1",
+      "source_relative_path": "hpc_status/paper1-composition-v2/status.json",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1C_composition_v2_status.json",
+      "size_bytes": 239923,
+      "sha256": "0f7c3160f7084501bca5b0018d5ad22b10df0d5c9952f7bbcc496df6b3c61561"
+    },
+    {
+      "regime": "regime1_zero_shot",
+      "source_repository": "https://github.com/jackzhu119/cross-subject-mi-eeg",
+      "source_branch": "origin/hpc/paper1-composition-v2",
+      "commit_sha": "38d3f71527b50ead4116165ec320613282e30ce1",
+      "source_relative_path": "research_runs/PAPER1_COMPOSITION_20261027/PROTOCOL.md",
+      "archived_relative_path": "evidence_archive/regime1_zero_shot/Study1C_composition_v2_PROTOCOL.md",
+      "size_bytes": 11203,
+      "sha256": "158538e6b39cf039013beae53c88c180d2b3c04fbdfb7927e417da1058ef13be"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/bmt_alignment_integrated_20261104/figures/Fig2_performance.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2A_Fig2_component_performance.csv",
+      "size_bytes": 9115,
+      "sha256": "4e83341ed2837e3d458d8a29a9c15498fd4fd684389ea971a8fadedd82e01eaf"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/bmt_alignment_integrated_20261104/figures/Fig3_error_coverage.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2B_Fig3_error_redistribution_coverage.csv",
+      "size_bytes": 10747,
+      "sha256": "e620a927c1a58dfe2aa22c45b65cd88bbb69e1fad0329e4a59ff5065cf78d893"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/bmt_alignment_integrated_20261104/figures/Fig4_budget.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2_Fig4_budget_curves.csv",
+      "size_bytes": 4330,
+      "sha256": "a7fdf675bc97d8e948f612fcba000da1fd22f4719e666b917691305a7812d9d9"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/bmt_alignment_integrated_20261104/figures/Fig5_mechanisms.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2CD_Fig5_geometry_and_window_mechanisms.csv",
+      "size_bytes": 11278,
+      "sha256": "a9917f9a653f0aaf5e486888d6ebdebcc2ac5a9de829685648b85f751e4c9ed6"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/jne_alignment_20261104/UPLOAD_FILES/Supplementary_Results.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2_Supplementary_Results_All_Contrasts.csv",
+      "size_bytes": 7547342,
+      "sha256": "3fa9bb98a3d340a8e4e41b65e0a15c76c338ebb1853d8eabfa27f208c17d1c54"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/jne_alignment_20261104/UPLOAD_FILES/Supplementary_Saved_Records.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2_Supplementary_Saved_Records.csv",
+      "size_bytes": 7731686,
+      "sha256": "6ad3d54f2b2d59711cd39688b8a50690e4edbefb543d79b1d75f88bda7c612e1"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/bmt_submission_20261028/figures/Fig2_geometry_source_data.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2C_geometry_source_data.csv",
+      "size_bytes": 14807,
+      "sha256": "bd0115b0106bd83dca490768c9f0a5ce529a5bbe4f78aa66e9cd0d43d125a414"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "manuscript/bmt_submission_20261028/figures/Fig3_neural_normalization_source_data.csv",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2E_DiscoveryV3_neural_normalization_source_data.csv",
+      "size_bytes": 6788,
+      "sha256": "9a021afba4e2b9eadea08c817eeac652a47ae68269ae6a68647ad351b3b3983e"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "training_status/paper2-discovery-v3/STATUS.json",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2E_DiscoveryV3_126tasks_STATUS.json",
+      "size_bytes": 611480,
+      "sha256": "e3c8ff621148153c6d0592210d69965e531d5a3ef4adb5c59615d13a03603068"
+    },
+    {
+      "regime": "regime2_longitudinal",
+      "source_repository": "https://github.com/jackzhu119/few-shot-mi-eeg",
+      "source_branch": "origin/research/paper2-alignment-integrated-revision",
+      "commit_sha": "082310dc4c080d5f655d783eac7059e519ca27d9",
+      "source_relative_path": "training_status/paper2-recalibration-v2/STATUS.json",
+      "archived_relative_path": "evidence_archive/regime2_longitudinal/Study2E_DiscoveryV2_24tasks_STATUS.json",
+      "size_bytes": 1179338,
+      "sha256": "8286995daa11a4ecd20ae339c8c8f245ad9849100238e92d2b4ce73e6de50991"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/bmte-error-redistribution-20261029/tables/cohort_summary.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/BMTE_cohort_summary.csv",
+      "size_bytes": 723604,
+      "sha256": "bdb46b7b658d3974739c183263badda40115dc59c3e5085ba6f62265efeab7c2"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/bmte-error-redistribution-20261029/tables/component_summary.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/BMTE_component_summary.csv",
+      "size_bytes": 45676,
+      "sha256": "38dc92c81b38cafcd85f6c23f5376a392a10230d50d35683f47fb0726bdc0a49"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/bmte-error-redistribution-20261029/tables/key_claims.json",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/BMTE_51condition_error_redistribution_key_claims.json",
+      "size_bytes": 76913,
+      "sha256": "601b85988964cb74ad104a55da9bcf3ff3031c17e7eaab6d2f00f59cee25ebe2"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/bmte-error-redistribution-20261029/tables/neural_distributions_B20.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/BMTE_51condition_neural_distributions_B20.csv",
+      "size_bytes": 4256,
+      "sha256": "ac3e8e1bd0ceb98f4751e866042708ff5fcb9c24e1bf4d6eac3a8373c00cb5f9"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/bmte-error-redistribution-20261029/tables/neural_paired_contrasts.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/BMTE_neural_paired_contrasts.csv",
+      "size_bytes": 13746,
+      "sha256": "934ae97574946a9f798eb170e99cfd0a9f99687ad6e90107258e87528349086d"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/bmte-error-redistribution-20261029/tables/source_extension_seed_metrics.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/BMTE_source_extension_seed_metrics.csv",
+      "size_bytes": 20002,
+      "sha256": "3496aecfd176d02ad153471ae7e8531ebe3748729a95945562cf6c1483c2d9ba"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/Table1_cohorts.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/ERFC_Table1_cohorts.csv",
+      "size_bytes": 157,
+      "sha256": "69d528354cc4c0f436d28951372345886029687a4a329d7b1275e572b02c57ff"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/Table2_accuracy.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/ERFC_Table2_accuracy.csv",
+      "size_bytes": 183,
+      "sha256": "c6bae62f2a28010b8d922f3ecd1fc705d1d8f8c782b1dbc0912a2d0ae8a8b181"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/Table3_mechanism.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/ERFC_Table3_selectivity_mechanism.csv",
+      "size_bytes": 582,
+      "sha256": "d94025cbd6d0657469f961998bb13c909e82b313140664acf1bdfc7ba509d964"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r10_method_budget_summaries_verified.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round10_ERFC_method_budget_summaries_verified.csv",
+      "size_bytes": 126657,
+      "sha256": "3441dcdacbc0d929b683e55353d06c12dd6ac12920eef8285c25b04adc0e3f34"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r10_primary_comparisons_verified.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round10_ERFC_primary_comparisons_verified.csv",
+      "size_bytes": 5670,
+      "sha256": "3b2495138ba3dad2ec176981d6e5a1713a776262cbe6f95e3a3fd7bd2a0faab8"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r10_exploratory_matched_map_mechanisms.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round10_ERFC_18mechanisms_vs_matched_map.csv",
+      "size_bytes": 11310,
+      "sha256": "4b27cafe83e65be9b89c47efeb36eb2628d5912b14ad0a76aedd5b8259051c35"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r10_profile_configuration.json",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round10_ERFC_profile_configuration.json",
+      "size_bytes": 441,
+      "sha256": "883ea3a072cef2d324a7a1036e20b40f16f581982cce8d427ee45f9eba6e576c"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r3_primary_comparisons_verified.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round03_Schur_protection_primary_comparisons_verified.csv",
+      "size_bytes": 4432,
+      "sha256": "fead8b07f13e1950dfe28ad47d80480e8edcbac4e8a761b382fb80e8f5c81945"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r3_protection_participant_differences.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round03_Schur_protection_participant_differences.csv",
+      "size_bytes": 2750,
+      "sha256": "09e06f38d9c2204a9fef41727add6a44eec59232d6625a25cdb2a489364e69b0"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r7_primary_comparisons_verified.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round07_spatiotemporal_Lie_primary_comparisons.csv",
+      "size_bytes": 5432,
+      "sha256": "5f321025ef791c1419285af46d09c714c36fdff1f81affd652712df85865081e"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r12_verified_primary_comparisons.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round12_evidence_ranking_primary_comparisons.csv",
+      "size_bytes": 1298,
+      "sha256": "f00bfa474c4c3f4411d5567d8585d8005466649d22076b093442672df3b3c57b"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "manuscripts/brain-sciences-erfc-20261029/tables/r13_verified_primary_statistics.csv",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Round13_session_persistence_primary_statistics.csv",
+      "size_bytes": 785,
+      "sha256": "33c9e23673ee1c5ac1dd25a30738da4d1afd40df95ec7ac8fca88c8bdd7837e1"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "docs/EXPERIMENT_STATUS.json",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Rounds01_to_09_EXPERIMENT_STATUS.json",
+      "size_bytes": 11918,
+      "sha256": "5ac59845047cf5a2fd7ed7b5a87ce56cae96922e2aaad813c0d55a618ed70dfa"
+    },
+    {
+      "regime": "regime3_prefix_erfc",
+      "source_repository": "https://github.com/jackzhu119/research3",
+      "source_branch": "origin/main",
+      "commit_sha": "0365324ebc244f947926a6d544f5fddd7a1bffd5",
+      "source_relative_path": "docs/LIVE_STATUS.json",
+      "archived_relative_path": "evidence_archive/regime3_prefix_erfc/Rounds01_to_13_LIVE_STATUS.json",
+      "size_bytes": 32520,
+      "sha256": "3b389e2645b873f8ae8a150718c0905a150f90b7a77c85f51e2d153f2160adbd"
+    }
+  ]
+}
