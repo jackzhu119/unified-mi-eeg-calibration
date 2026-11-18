@@ -32,11 +32,11 @@ This repository is the **unified flagship manuscript, locked experimental eviden
 
 | Figure | Description | Preview |
 | :---: | :--- | :---: |
-| **Figure 1** | **Three-Regime Synthesis**: Primary effect sizes across Regimes I–III and unified trial-level error redistribution ($C, I, D, G$) showing the transition from constructive net redistribution (input covariance geometry) to near-total cancellation churn (post-EA parameter updates) and selective churn suppression (`ERFC`). | ![Fig1](figures/Fig1_Three_Regime_Synthesis.png) |
-| **Figure 2** | **Regime I (Zero-Shot Transfer)**: Cohort scaling (`S9` $\to$ `S29` $\to$ `S60`), fixed 2,592-trial source-composition bias cancellation (`s9-all`, `y51-matched`, `s60-matched`), and 5-objective risk invariance (`ERM` vs. `TAIL+Cons` vs. `GroupDRO`). | ![Fig2](figures/Fig2_Regime1_ZeroShot_Cohort_vs_Objective.png) |
-| **Figure 3** | **Regime II (Few-Label Longitudinal Recalibration)**: Four-stage component decomposition on Kumar12 & BNCI9, 544-fit normalization geometry (`Common RMS` vs. `Full EA`), and 148-fit temporal window mechanism (`[0, 5) s` cue window vs. `[2, 4) s` task window). | ![Fig3](figures/Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.png) |
-| **Figure 4** | **Regime III (Post-EA Error Churn & Schur Protection)**: Round 3 Schur-complement Fisher protection recovery (**+4.66 pp**), Rounds 3–10 BA plateau around `support_EA`, and the 51-condition **95.35% error cancellation law**. | ![Fig4](figures/Fig4_Regime3_Neural_Churn_and_Schur_Protection.png) |
-| **Figure 5** | **Regime III (ERFC Selective Functional Calibration)**: Round 10 `ERFC` vs. unconstrained `matched_map` across Stieger2021 ($n=11$), Pan2023 ($n=14$), and Weibo2014 ($n=10$), demonstrating ~84.5% query update reduction, significant reduction in introduced errors, and -13.3 to -27.0 pp reduction in negative-transfer sessions. | ![Fig5](figures/Fig5_Regime3_ERFC_Selectivity_Tradeoff.png) |
+| **Figure 1** | **Three-Regime Synthesis**: Primary effect sizes across Regimes I–III and unified trial-level error redistribution ($C, I, D, G$) showing the transition from constructive net redistribution (input covariance geometry) to near-total cancellation churn (post-EA parameter updates) and selective churn suppression (`ERFC`). | ![Fig1](figures/png/Fig1_Three_Regime_Synthesis.png) |
+| **Figure 2** | **Regime I (Zero-Shot Transfer)**: Cohort scaling (`S9` $\to$ `S29` $\to$ `S60`), fixed 2,592-trial source-composition bias cancellation (`s9-all`, `y51-matched`, `s60-matched`), and 5-objective risk invariance (`ERM` vs. `TAIL+Cons` vs. `GroupDRO`). | ![Fig2](figures/png/Fig2_Regime1_ZeroShot_Cohort_vs_Objective.png) |
+| **Figure 3** | **Regime II (Few-Label Longitudinal Recalibration)**: Four-stage component decomposition on Kumar12 & BNCI9, 544-fit normalization geometry (`Common RMS` vs. `Full EA`), and 148-fit temporal window mechanism (`[0, 5) s` cue window vs. `[2, 4) s` task window). | ![Fig3](figures/png/Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.png) |
+| **Figure 4** | **Regime III (Post-EA Error Churn & Schur Protection)**: Round 3 Schur-complement Fisher protection recovery (**+4.66 pp**), Rounds 3–10 BA plateau around `support_EA`, and the 51-condition **95.35% error cancellation law**. | ![Fig4](figures/png/Fig4_Regime3_Neural_Churn_and_Schur_Protection.png) |
+| **Figure 5** | **Regime III (ERFC Selective Functional Calibration)**: Round 10 `ERFC` vs. unconstrained `matched_map` across Stieger2021 ($n=11$), Pan2023 ($n=14$), and Weibo2014 ($n=10$), demonstrating ~84.5% query update reduction, significant reduction in introduced errors, and -13.3 to -27.0 pp reduction in negative-transfer sessions. | ![Fig5](figures/png/Fig5_Regime3_ERFC_Selectivity_Tradeoff.png) |
 
 ---
 
@@ -44,33 +44,36 @@ This repository is the **unified flagship manuscript, locked experimental eviden
 
 ```text
 unified-mi-eeg-calibration/
-├── README.md                                     # English project overview, lineage map, and verification guide
-├── README_ZH.md                                  # Chinese project overview and synthesis guide
-├── manuscript/                                   # Complete Flagship Manuscript & Supplementary Materials
-│   ├── Unified_MIEEG_Manuscript_EN.md            # Full English manuscript (Markdown source, Tables 1-6, Figs 1-5)
-│   ├── Unified_MIEEG_Manuscript_EN.pdf           # Compiled English manuscript (PDF, LaTeX/pdflatex typeset)
-│   ├── Unified_MIEEG_Manuscript_EN.docx          # Editable English manuscript (Microsoft Word DOCX)
-│   ├── Unified_MIEEG_Manuscript_ZH.md            # Full Chinese counterpart manuscript (Markdown source)
-│   ├── Unified_MIEEG_Manuscript_ZH.docx          # Editable Chinese counterpart manuscript (Microsoft Word DOCX)
-│   ├── Supplementary_Materials_EN.md             # Tier 2 & Tier 3 Supplementary Materials (Tables S1-S8)
-│   ├── Supplementary_Materials_EN.pdf            # Compiled Supplementary Materials (PDF)
-│   ├── Supplementary_Materials_EN.docx           # Editable Supplementary Materials (DOCX)
-│   ├── master_experimental_synthesis_zh.md       # Complete 88-branch experimental inventory & synthesis report
-│   └── merger_master_plan_zh.md                  # Scientific, statistical, and repository merger blueprint
-├── figures/                                      # 5 Multi-Panel Publication Figures (300 DPI PNG + PDF + SVG)
-│   ├── Fig1_Three_Regime_Synthesis.{png,pdf,svg}
-│   ├── Fig2_Regime1_ZeroShot_Cohort_vs_Objective.{png,pdf,svg}
-│   ├── Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.{png,pdf,svg}
-│   ├── Fig4_Regime3_Neural_Churn_and_Schur_Protection.{png,pdf,svg}
-│   └── Fig5_Regime3_ERFC_Selectivity_Tradeoff.{png,pdf,svg}
-├── evidence_archive/                             # Locked, Read-Only Experimental Result Snapshots from All 3 Repos
-│   ├── DATA_LINEAGE_MANIFEST.json                # Cryptographic SHA-256 & Git commit SHA provenance manifest
-│   ├── regime1_zero_shot/                        # Extracted from jackzhu119/cross-subject-mi-eeg
-│   ├── regime2_longitudinal/                     # Extracted from jackzhu119/few-shot-mi-eeg
-│   └── regime3_prefix_erfc/                      # Extracted from jackzhu119/research3
-└── scripts/                                      # Zero-GPU Post-Processing, Verification, & Figure Scripts
-    ├── verify_all_tables.py                      # Audits all manuscript metrics against evidence_archive/
-    └── build_svg_figures.py                      # Deterministic vector SVG/PDF/PNG figure generator
+├── README.md                                           # English project overview, lineage map, and verification guide
+├── README_ZH.md                                        # Chinese project overview and synthesis guide
+├── manuscript/                                         # Complete Flagship Manuscript & Supplementary Materials
+│   ├── en/                                             # English main manuscript (Tables 1-6, Figs 1-5)
+│   │   ├── Unified_MIEEG_Manuscript_EN.md
+│   │   ├── Unified_MIEEG_Manuscript_EN.pdf
+│   │   └── Unified_MIEEG_Manuscript_EN.docx
+│   ├── zh/                                             # Chinese counterpart manuscript
+│   │   ├── Unified_MIEEG_Manuscript_ZH.md
+│   │   └── Unified_MIEEG_Manuscript_ZH.docx
+│   └── supplementary/                                  # Tier 2 & Tier 3 Supplementary Materials (Tables S1-S8)
+│       ├── Supplementary_Materials_EN.md
+│       ├── Supplementary_Materials_EN.pdf
+│       └── Supplementary_Materials_EN.docx
+├── docs/                                               # Internal 88-Branch Synthesis & Merger Planning Reports
+│   ├── master_experimental_synthesis_zh.md             # Complete 88-branch experimental inventory & synthesis report
+│   └── merger_master_plan_zh.md                        # Scientific, statistical, and repository merger blueprint
+├── figures/                                            # 5 Multi-Panel Publication Figures Categorized by Format
+│   ├── png/                                            # 300 DPI PNG previews (Fig1–Fig5)
+│   ├── pdf/                                            # Vector PDF figures (Fig1–Fig5)
+│   └── svg/                                            # Editable SVG vector sources (Fig1–Fig5)
+├── evidence_archive/                                   # Locked, Read-Only Experimental Result Snapshots from All 3 Repos
+│   ├── DATA_LINEAGE_MANIFEST.json                      # Cryptographic SHA-256 & Git commit SHA provenance manifest
+│   ├── regime1_zero_shot/                              # Extracted from jackzhu119/cross-subject-mi-eeg
+│   ├── regime2_longitudinal/                           # Extracted from jackzhu119/few-shot-mi-eeg
+│   └── regime3_prefix_erfc/                            # Extracted from jackzhu119/research3
+└── scripts/                                            # Zero-GPU Post-Processing, Verification, & Figure Scripts
+    ├── assemble_package.py                             # Package organizer, lineage manifest builder, & compiler
+    ├── verify_all_tables.py                            # Audits all manuscript metrics against evidence_archive/
+    └── build_svg_figures.py                            # Deterministic vector SVG/PDF/PNG figure generator
 ```
 
 ---
@@ -95,6 +98,6 @@ No GPU or raw EEG retraining is required to audit the tables or regenerate the f
 # 1. Verify all manuscript tables (Tables 1-6 & Supplementary Tables S1-S8) against locked CSV/JSON archives
 python3 scripts/verify_all_tables.py
 
-# 2. Regenerate all 5 publication figures (SVG, 300 DPI PNG, and vector PDF)
+# 2. Regenerate all 5 publication figures (SVG, 300 DPI PNG, and vector PDF under figures/{svg,png,pdf}/)
 python3 scripts/build_svg_figures.py
 ```

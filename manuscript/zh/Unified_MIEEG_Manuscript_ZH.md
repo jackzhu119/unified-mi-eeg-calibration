@@ -36,7 +36,7 @@ $^{*}$ 通讯作者：朱子元 (E-mail: `zzy2630816871@gmail.com`; ORCID: `0009
 
 通过对三个独立研究仓库中已完成的 **>6,400 次 HPC 模型拟合、覆盖 7 个公开数据集** 的全量实验证据进行统一建模与机制复盘，本文在零样本跨被试（Regime I）、少标签纵向跨会话（Regime II）与小样本前序神经/函数校准（Regime III）三大范式下建立了统一的误差重分布与输入协方差几何理论（见 **图 1**）。
 
-![图 1：三大校准范式下的全量实验效应合成图](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig1_Three_Regime_Synthesis.png)
+![图 1：三大校准范式下的全量实验效应合成图](../../figures/png/Fig1_Three_Regime_Synthesis.png)
 
 ---
 
@@ -78,31 +78,31 @@ $$G = \Delta\text{BA} = C - I, \qquad D = C + I, \qquad \kappa_{\text{total}} = 
 
 ### 3.1 范式 I（零样本跨被试迁移）：多队列空间多样性 vs. 试次规模与目标函数正则化
 
-**表 2** 与 **图 2** 汇总了仓库一（[`cross-subject-mi-eeg`](file:///home/antigravity/repos/cross-subject-mi-eeg)）全部三项核心实验（Study 1A 队列扩展、Study 1B 五种目标函数、Study 1C 固定 2,592 试次构成解耦）在外部 Dreyer2023（$n=85$）与源池嵌套交叉验证（$n=60$）上的完整结果。
+**表 2** 与 **图 2** 汇总了仓库一（[`cross-subject-mi-eeg`](https://github.com/jackzhu119/cross-subject-mi-eeg)）全部三项核心实验（Study 1A 队列扩展、Study 1B 五种目标函数、Study 1C 固定 2,592 试次构成解耦）在外部 Dreyer2023（$n=85$）与源池嵌套交叉验证（$n=60$）上的完整结果。
 
 1. **多队列扩展消除零样本弱势类崩塌并在 S29 处迅速饱和（Study 1A）：** 仅用单队列 `S9`（9 人 BNCI）训练时，外部 Dreyer（$n=85$）上的个体弱势类召回率 `min_recall` 仅为 **27.32%**（神经网络 `BROAD`）与 **33.99%**（经典 `CSP+rLDA`）。扩展至双队列 `S60`（9 BNCI + 51 Yang）后，预设主终点 `min_recall` 大幅提升 **+21.17 pp**（从 `27.32%` 升至 `48.48%`，95% CI `[17.12, 25.21]`，$p = 8.88 \times 10^{-17}$，85 人中 72 人改善），BA 提升 **+5.85 pp**（`58.32%` $\to$ `64.17%`，$p_{\text{Holm}} = 5.34 \times 10^{-9}$）。更重要的是，29 人双队列子集 `S29`（9 BNCI + 20 Yang）已达到 `49.03%` `min_recall` 与 `64.16%` BA（`S60 - S29` = **−0.55 pp**，$p_{\text{Holm}} = 1.000$），证明**跨队列空间覆盖收益在引入第二队列约 20 名被试时即完全饱和**。
 2. **固定 2,592 试次预算证明“跨队列边界偏置相消”而非“试次数量堆砌”是核心驱动力（Study 1C）：** 在将总训练试次严格锁定为 **2,592 试次** 的 90/90 项已完成经典实验中（**图 2B**），单队列 `s9-all`（2,592 试次）表现出典型的左手偏置（L=`79.29%`, R=`41.97%`, `min_recall`=`35.71%`），而单队列 `y51-matched`（2,592 试次）表现出方向完全相反的右手偏置（L=`49.94%`, R=`70.29%`, `min_recall`=`37.79%`）；哪怕将单队列 Yang 扩充 11.8 倍至 30,591 试次（`y51-all`），`min_recall` 依然停留在 `38.09%`。相反，在**完全相同的 2,592 试次预算**下按 50:50 混合两队列（`s60-matched`），正反分类面偏置立即抵消（L=`64.03%`, R=`65.62%`），`min_recall` 跃升至 **`46.71%`**（较 `s9-all` **+11.00 pp**，较 `y51-matched` **+8.92 pp**），BA 跃升至 **`64.82%`**（**+4.19 pp** 与 **+4.70 pp**）。在此基础上再将试次扩大 12.8 倍至 33,183 试次（`s60-all`），仅额外增加 **+0.97 pp** `min_recall` 与 **+0.65 pp** BA。
 3. **五种训练目标函数对比：复杂损失函数无显著增益，GroupDRO 发生严重负迁移（Study 1B）：** 在固定 `S60` 多队列源池上完成的 90/90 项 HPC 拟合显示（**图 2C**），`TAIL+Consistency` 相对标准 `ERM` 的主终点 `min_recall` 差值在源池嵌套 CV（$n=60$）中仅为 **+1.35 pp**（`[-0.46, +3.39]`，$p = 0.192$），在外部 Dreyer（$n=85$）中仅为 **+1.28 pp**（`[-0.35, +2.91]`，$p = 0.124$）；而 `GroupDRO` 在外部测试集上出现严重崩塌（BA 跌至 `56.03%`，`min_recall` 跌至 `42.64%`，相对 `TAIL+Consistency` **−8.75 pp**，$p_{\text{Holm}} = 4.0 \times 10^{-5}$）。
 
-![图 2：范式 I 零样本跨被试源队列扩展、固定试次预算构成与目标函数对比](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig2_Regime1_ZeroShot_Cohort_vs_Objective.png)
+![图 2：范式 I 零样本跨被试源队列扩展、固定试次预算构成与目标函数对比](../../figures/png/Fig2_Regime1_ZeroShot_Cohort_vs_Objective.png)
 
 ---
 
 ### 3.2 范式 II（少标签纵向跨会话重校准）：组件解耦、误差重分布与时间窗物理机制
 
-**表 3**（见英文主稿对应数据表）与 **图 3** 展示了仓库二（[`few-shot-mi-eeg`](file:///home/antigravity/repos/few-shot-mi-eeg)）在纵向 Kumar2024（$n=18 \times 6$ 会话）与外部 BNCI2014-001（$n=9 \times 2$ 会话）上的完整解耦与机制实验结果：
+**表 3**（见英文主稿对应数据表）与 **图 3** 展示了仓库二（[`few-shot-mi-eeg`](https://github.com/jackzhu119/few-shot-mi-eeg)）在纵向 Kumar2024（$n=18 \times 6$ 会话）与外部 BNCI2014-001（$n=9 \times 2$ 会话）上的完整解耦与机制实验结果：
 
 1. **为什么无对齐的空间滤波重拟合在 BNCI 上失效？——97.73% 的误差相互抵消（Study 2A & 2B）：** 在 $B=20$ 标注预算下，`Full CSP - LDA-only` 在 Kumar 主评估集（$n=12$）上带来 **+5.47 pp** `[+2.17, +8.91]` 的 BA 增益，但在外部 BNCI（$n=9$）上仅为 **+0.19 pp** `[-1.85, +2.13]`（$p_{\text{Holm}}=1.00$）。试次级误差重分布揭示：在 BNCI 上，用 20 个未对齐目标试次重算空间滤波器虽然纠正了 $C = 4.17\text{ pp}$ 的错误，却同时将 $I = 3.98\text{ pp}$ 原本判对的试次改错（**抵消率高达 97.73%**）。而引入预滤波支持集欧氏对齐（`EA + Full - Full CSP`）后，在 Kumar（$C=14.61\text{ pp}, I=9.32\text{ pp}$，净增益 **+5.30 pp** `[+2.82, +8.31]`）与 BNCI（$C=12.78\text{ pp}, I=7.13\text{ pp}$，净增益 **+5.65 pp** `[+3.15, +8.70]`，9/9 人全员提升，$p_{\text{Holm}}=0.0117$）上均实现了高信噪比的正向误差重分布，并使动态弱势类召回率分别大幅提升 **+10.45 pp** 与 **+8.52 pp**。
 2. **标量幅值漂移 vs. 非对角空间旋转（Study 2C，544 次共享坐标拟合）：** 在 Kumar 主评估集（$n=12$）上，单标量全局缩放 `Common RMS + Full`（`69.52%`）即捕获了完整矩阵 `Full EA + Full`（`70.43%`）绝大部分收益（`EA - RMS` 仅 **+0.91 pp** `[-1.28, +3.18]`）；而在 BNCI（$n=9$）上，标量 `RMS`（`72.87%`）与对角缩放 `Diagonal`（`72.59%`）几乎无效，完整矩阵 `Full EA`（`77.50%`）超越 `RMS` 达 **+4.63 pp** `[+1.94, +7.96]`（NLL 改善 `-0.0665`，Brier 改善 `-0.0238`）。
 3. **5 s 提示锚定窗 vs. 2 s 任务起始窗的物理机制闭环（Study 2D，148 次相位重放拟合）：** 在 Kumar 具备在线相位映射的被试子集（条件集 $n=9$，元数据完整集 $n=8$）上，针对**完全相同的试次**对比 `5 s 提示窗 [0, 5) s` 与 `2 s 任务窗 [2, 4) s`（**图 3D**）：`EA - Full` 的增益从 5 s 提示窗上的 **+7.85 pp** `[+3.04, +13.66]` 骤降至 2 s 任务窗上的 **+0.13 pp** `[-1.40, +1.92]`，被试内配对差值达 **−7.73 pp** `[-12.17, -3.76]`（$n=8$ 为 **−7.03 pp** `[-11.84, -2.97]`）。这证明宽提示窗 `[0, 5) s` 中包含大量提示期与过渡期的全局基线功率波动（因此标量 `RMS` 即可有效校正，且裁剪至 `[2, 4) s` 后该部分额外增益自然消失），而在紧凑纯任务窗口（如 BNCI）中，跨会话偏移则由真正的跨通道非对角协方差旋转主导。
 
-![图 3：范式 II 少标签跨会话重校准组件解耦、误差重分布与时间窗机制](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.png)
+![图 3：范式 II 少标签跨会话重校准组件解耦、误差重分布与时间窗机制](../../figures/png/Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.png)
 
 ---
 
 ### 3.3 范式 III（小样本前序神经与函数式校准）：13 轮实验演进、95% 误差对冲陷阱与 ERFC 选择性控制
 
-在仓库三（[`research3`](file:///home/antigravity/repos/research3)）横跨 13 轮、累计 >5,600 项 HPC 任务的系统探索中（评估集涵盖 Stieger $n=11$、Pan2023 $n=14$、Weibo2014 $n=10$，共 35 名被试、143 会话、429 会话–种子单元），我们揭示了深度网络小样本校准的完整机制图谱（见 **图 4** 与 **图 5**）：
+在仓库三（[`research3`](https://github.com/jackzhu119/research3)）横跨 13 轮、累计 >5,600 项 HPC 任务的系统探索中（评估集涵盖 Stieger $n=11$、Pan2023 $n=14$、Weibo2014 $n=10$，共 35 名被试、143 会话、429 会话–种子单元），我们揭示了深度网络小样本校准的完整机制图谱（见 **图 4** 与 **图 5**）：
 
 1. **无保护二阶切空间更新的小样本崩溃与 Schur 补信息保护（Round 3 & Round 4）：** 在 $B=20$ 前序预算下，直接对空间李群与分类头执行无保护二阶切空间/牛顿更新（`tangent_profiled`, `head_newton`）在 Stieger（$n=11$）上导致严重负迁移（BA 跌至 `56.85%`，较 `sgd10` **−4.64 pp**，$p_{\text{Holm}}=0.0479$；较 `sgd100` **−5.11 pp**，$p_{\text{Holm}}=0.0293$）。引入 **Schur 补 Fisher 信息保护**（`tangent_protected`）将 BA 显著恢复 **+4.66 pp**（`[+2.40, +6.91]`，$p_{\text{Holm}}=0.0439$，11 人中 10 人提升，**图 4B**）；Round 4 进一步证实支持集内交叉拟合选择（`xfit_select`）较未交叉拟合基线提升 **+1.75 pp**（$p_{\text{Holm}}=0.0117$），较样本内收缩提升 **+3.34 pp**（$p=0.0068$）。
 2. **输入对齐后的普遍准确率平台期与“95.35% 误差对冲定律”（Rounds 5–9 & 51 条件审计）：** 尽管 Schur 保护消除了崩溃，但横跨半球李群耦合（R5）、曲率 Laplace 预测积分（R6，虽使 Pan2023 NLL 改善 `-0.00103`，但 $\Delta\text{BA}=-0.036\text{ pp}$）、有限窗时空李群（R7，$|\Delta\text{BA}| \le 0.12\text{ pp}$）、SPD 部分协方差传输与有界类条件纤维旋转（R8，2,835 项任务，`fiber_bounded vs support_EA` 仅 `+0.26 / +0.39 pp`，$p_{\text{Holm}}=1.00$）以及支持集约束高斯过程残差锚定（R9，1,548 项任务，`ea_rbf_anchored vs support_EA` 仅 `+0.29 / +0.94 pp`，$p_{\text{Holm}}=1.00$），没有任何一种后对齐参数或核方法在多重检验校正后显著超越零参数微调的 `support_EA`（**图 4C**）。51 条件神经误差重分布审计（**图 4A**）给出了定量解释：在 `support_EA` 之后施加的参数微调虽在查询集上翻转了中位 **8.09%** 的试次预测，但其中高达 **95.35% 相互抵消**（会话内抵消 `82.54%` + 会话间抵消 `11.32%`），中位净增益仅 **+0.01 pp**！
@@ -112,9 +112,9 @@ $$G = \Delta\text{BA} = C - I, \qquad D = C + I, \qquad \kappa_{\text{total}} = 
    - **会话级负迁移比例暴降 13.33–27.04 pp**：劣于 `support_EA` 的受损会话比例在 Stieger 上从 `30.50%` 降至 **`3.46%`**（**−27.04 pp**，$p_{\text{Holm}}=0.0137$），在 Pan 上从 `21.43%` 降至 **`3.57%`**（**−17.86 pp**，$p_{\text{Holm}}=0.0313$），在 Weibo 上从 `16.67%` 降至 **`3.33%`**（**−13.33 pp**）。
    - 此外，Round 12（78/78 任务）验证了按证据强度排序选择查询试次的方向性收益（`top_q vs random_q` $+0.041\text{ pp}$），Round 13（96/96 任务）则证明跨会话传递函数状态与每会话重置无显著交互差异（$p=0.7031$），确立了“每会话独立执行支持集 EA 对齐 + ERFC 局部保守校准”的最佳工程范式。
 
-![图 4：范式 III 神经校准 95% 误差对冲定律、Round 3 Schur 保护与跨算法平台期](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig4_Regime3_Neural_Churn_and_Schur_Protection.png)
+![图 4：范式 III 神经校准 95% 误差对冲定律、Round 3 Schur 保护与跨算法平台期](../../figures/png/Fig4_Regime3_Neural_Churn_and_Schur_Protection.png)
 
-![图 5：范式 III ERFC 选择性干预、新引入错误抑制与负迁移会话控制](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig5_Regime3_ERFC_Selectivity_Tradeoff.png)
+![图 5：范式 III ERFC 选择性干预、新引入错误抑制与负迁移会话控制](../../figures/png/Fig5_Regime3_ERFC_Selectivity_Tradeoff.png)
 
 ---
 
