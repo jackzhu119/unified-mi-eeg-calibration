@@ -8,7 +8,7 @@
 **单位：** 重庆医科大学 人工智能医学学院（College of Artificial Intelligence Medicine, Chongqing Medical University），中国重庆 400016  
 \*通信作者：朱子元（邮箱：`zzy2630816871@gmail.com`，ORCID：`0009-0005-1153-4926`）
 
-> **[English README](README.md)** | **[英文旗舰主稿 PDF](manuscript/Unified_MIEEG_Manuscript_EN.pdf)** | **[英文主稿 Word](manuscript/Unified_MIEEG_Manuscript_EN.docx)** | **[中文对照主稿 Word](manuscript/Unified_MIEEG_Manuscript_ZH.docx)** | **[补充材料 PDF](manuscript/Supplementary_Materials_EN.pdf)**
+> **[English README](README.md)** | **[英文旗舰主稿 PDF](manuscript/en/Unified_MIEEG_Manuscript_EN.pdf)** | **[英文主稿 Word](manuscript/en/Unified_MIEEG_Manuscript_EN.docx)** | **[中文对照主稿 Word](manuscript/zh/Unified_MIEEG_Manuscript_ZH.docx)** | **[补充材料 PDF](manuscript/supplementary/Supplementary_Materials_EN.pdf)** | **[88 分支实验盘点](docs/master_experimental_synthesis_zh.md)**
 
 ---
 
@@ -31,33 +31,36 @@
 
 ```text
 unified-mi-eeg-calibration/
-├── README.md                                     # 英文项目总览、三仓库谱系映射与复现指南
-├── README_ZH.md                                  # 中文项目总览与核心发现说明
-├── manuscript/                                   # 完整旗舰论文、中文对照稿与补充材料包
-│   ├── Unified_MIEEG_Manuscript_EN.md            # 英文完整旗舰主稿（Markdown 源码，含表 1-6 与图 1-5）
-│   ├── Unified_MIEEG_Manuscript_EN.pdf           # 英文排版预览 PDF (pdflatex 编译)
-│   ├── Unified_MIEEG_Manuscript_EN.docx          # 英文可编辑 Word 主稿 (.docx)
-│   ├── Unified_MIEEG_Manuscript_ZH.md            # 中文完整对照主稿（Markdown 源码）
-│   ├── Unified_MIEEG_Manuscript_ZH.docx          # 中文可编辑 Word 主稿 (.docx)
-│   ├── Supplementary_Materials_EN.md             # 补充材料（Tier 2 全量附表 S1-S7 & Tier 3 边界披露表 S8）
-│   ├── Supplementary_Materials_EN.pdf            # 补充材料排版预览 PDF
-│   ├── Supplementary_Materials_EN.docx           # 补充材料可编辑 Word (.docx)
-│   ├── master_experimental_synthesis_zh.md       # 88 分支全量实验盘点与高创新性主线报告
-│   └── merger_master_plan_zh.md                  # 三仓库科学主线、统计对齐与工程合并总体规划书
-├── figures/                                      # 5 幅出版级多面板组合图（300 DPI PNG + 矢量 PDF + SVG）
-│   ├── Fig1_Three_Regime_Synthesis.{png,pdf,svg}
-│   ├── Fig2_Regime1_ZeroShot_Cohort_vs_Objective.{png,pdf,svg}
-│   ├── Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.{png,pdf,svg}
-│   ├── Fig4_Regime3_Neural_Churn_and_Schur_Protection.{png,pdf,svg}
-│   └── Fig5_Regime3_ERFC_Selectivity_Tradeoff.{png,pdf,svg}
-├── evidence_archive/                             # 从原三仓库提取锁定的只读实验证据包（含 Commit SHA 与 SHA-256）
-│   ├── DATA_LINEAGE_MANIFEST.json                # 精确记录每个证据文件对应的原仓库、分支、Commit SHA 与 SHA-256
-│   ├── regime1_zero_shot/                        # 源自 jackzhu119/cross-subject-mi-eeg
-│   ├── regime2_longitudinal/                     # 源自 jackzhu119/few-shot-mi-eeg
-│   └── regime3_prefix_erfc/                      # 源自 jackzhu119/research3
-└── scripts/                                      # 零训练、零 GPU 依赖的后处理核验与制图脚本
-    ├── verify_all_tables.py                      # 一键核验正文表 1-6 与补充材料表 S1-S8 的全部核心数值
-    └── build_svg_figures.py                      # 一键重新生成全部 5 幅 SVG/PNG/PDF 出版级矢量图
+├── README.md                                           # 英文项目总览、三仓库谱系映射与复现指南
+├── README_ZH.md                                        # 中文项目总览与核心发现说明
+├── manuscript/                                         # 完整旗舰论文、中文对照稿与补充材料包（按语种与用途归类）
+│   ├── en/                                             # 英文旗舰主稿（Markdown 源码 + PDF + Word，含表 1-6 与图 1-5）
+│   │   ├── Unified_MIEEG_Manuscript_EN.md
+│   │   ├── Unified_MIEEG_Manuscript_EN.pdf
+│   │   └── Unified_MIEEG_Manuscript_EN.docx
+│   ├── zh/                                             # 中文对照主稿（Markdown 源码 + Word）
+│   │   ├── Unified_MIEEG_Manuscript_ZH.md
+│   │   └── Unified_MIEEG_Manuscript_ZH.docx
+│   └── supplementary/                                  # 补充材料（Tier 2 附表 S1-S7 & Tier 3 边界披露表 S8）
+│       ├── Supplementary_Materials_EN.md
+│       ├── Supplementary_Materials_EN.pdf
+│       └── Supplementary_Materials_EN.docx
+├── docs/                                               # 内部科研整合规划与全分支实验盘点报告
+│   ├── master_experimental_synthesis_zh.md             # 88 分支全量实验盘点与高创新性主线报告
+│   └── merger_master_plan_zh.md                        # 三仓库科学主线、统计对齐与工程合并总体规划书
+├── figures/                                            # 5 幅出版级多面板组合图（按格式归类）
+│   ├── png/                                            # 300 DPI PNG 预览图（Fig1–Fig5）
+│   ├── pdf/                                            # 矢量 PDF 图件（Fig1–Fig5）
+│   └── svg/                                            # 可编辑 SVG 矢量源文件（Fig1–Fig5）
+├── evidence_archive/                                   # 从原三仓库提取锁定的只读实验证据包（含 Commit SHA 与 SHA-256）
+│   ├── DATA_LINEAGE_MANIFEST.json                      # 精确记录每个证据文件对应的原仓库、分支、Commit SHA 与 SHA-256
+│   ├── regime1_zero_shot/                              # 源自 jackzhu119/cross-subject-mi-eeg
+│   ├── regime2_longitudinal/                           # 源自 jackzhu119/few-shot-mi-eeg
+│   └── regime3_prefix_erfc/                            # 源自 jackzhu119/research3
+└── scripts/                                            # 零训练、零 GPU 依赖的后处理核验与制图脚本
+    ├── assemble_package.py                             # 目录归类、溯源清单生成与全套论文/补充材料编译脚本
+    ├── verify_all_tables.py                            # 一键核验正文表 1-6 与补充材料表 S1-S8 的全部核心数值
+    └── build_svg_figures.py                            # 一键重新生成全部 5 幅 SVG/PNG/PDF 出版级矢量图
 ```
 
 ---
@@ -70,6 +73,6 @@ unified-mi-eeg-calibration/
 # 1. 自动核验正文与补充材料所有核心数值与 evidence_archive/ 原始锁定 CSV/JSON 的一致性
 python3 scripts/verify_all_tables.py
 
-# 2. 一键重新生成全部 5 幅出版级矢量图（SVG + 300 DPI PNG + PDF）
+# 2. 一键重新生成全部 5 幅出版级矢量图（分别输出至 figures/{svg,png,pdf}/）
 python3 scripts/build_svg_figures.py
 ```

@@ -40,7 +40,7 @@ By synthesizing an extensive, pre-audited experimental archive comprising **over
 2. **Disentangling Spatial Refitting, Covariance Normalization Geometry, and Temporal Windowing in Longitudinal Recalibration (Regime II):** Across 18 six-session longitudinal participants (Kumar2024 [19]) and 9 external two-session participants (BNCI2014-001 [11]), we show that unaligned spatial-filter refitting (`Full CSP - LDA-only`) fails to generalize to BNCI ($+0.19\text{ pp}$) due to **97.73% error cancellation** ($C = 4.17\text{ pp}, I = 3.98\text{ pp}$), whereas pre-filter support-only Euclidean Alignment (`EA - Full`) achieves robust net error redistribution (**+5.30 pp** on Kumar, **+5.65 pp** on BNCI, $p_{\text{Holm}} = 0.0117$) and restores dynamic weaker-class recall by **+10.45 pp** and **+8.52 pp**. Through 544 shared-coordinate normalization fits (`Full`, `Diagonal`, `Common RMS`, `Full EA`) and 148 paired phase-window fits (`Cue-anchored 5 s [0, 5) s` vs. `Task-anchored 2 s [2, 4) s`), we further show that wide cue-anchored windows are dominated by non-task global amplitude drift (where restricting to `[2, 4) s` reduces the `EA - Full` gain by **−7.73 pp**), whereas compact task windows require off-diagonal cross-channel covariance rotation (`EA - RMS` = **+4.63 pp** on BNCI).
 3. **Resolving the 95% Neural Error-Churn Trap via Schur Protection and Evidence-Retaining Functional Calibration (Regime III):** Across 13 rounds of prefix neural calibration ($B \in \{4, 8, 12, 16, 20\}$) on Stieger2021 ($n=11$), Pan2023 ($n=14$), and Weibo2014 ($n=10$), we demonstrate that while Schur-complement Fisher protection is required to prevent catastrophic collapse in second-order tangent updates (**+4.66 pp** recovery, $p_{\text{Holm}} = 0.0439$), all post-alignment parameter, SPD-fiber (2,835 tasks), and GP-residual (1,548 tasks) updates plateau at the BA level of `support_EA` ($|\Delta\text{BA}| \le 0.65\text{ pp}$, $p_{\text{Holm}} \ge 0.5625$) because **95.35% of post-alignment trial flips cancel out** ($D = 8.09\text{ pp}, G = +0.01\text{ pp}$). We show that **Evidence-Retaining Functional Calibration (ERFC)** overcomes this churn trap by selectively abstaining on ~84.5% of unverified query updates ($p_{\text{Holm}} \le 0.0195$), cutting newly introduced errors by **0.69–0.75 pp** ($p_{\text{Holm}} \le 0.0313$) and reducing session-level negative transfer by **13.33–27.04 pp**.
 
-![Figure 1: Three-Regime Empirical Synthesis](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig1_Three_Regime_Synthesis.png)
+![Figure 1: Three-Regime Empirical Synthesis](../../figures/png/Fig1_Three_Regime_Synthesis.png)
 
 ---
 
@@ -114,11 +114,11 @@ Table 1 summarizes the seven public MI-EEG cohorts and three non-overlapping exp
 
 | Regime & Study | Source Repository & Branch Snapshot | Cohorts & Role | Participants ($N$) | Sessions / Trials | Calibration Budget ($B$) | Completed HPC Tasks / Fits |
 | :--- | :--- | :--- | :---: | :--- | :---: | :--- |
-| **Regime I: Study 1A**<br>Cohort Scaling | [`cross-subject-mi-eeg`](file:///home/antigravity/repos/cross-subject-mi-eeg)<br>`ELIGIBLE_V3_RESULTS_20261018` | • BNCI2014-001 (Source `S9`)<br>• Yang2025 (Source `+20`/`+51`)<br>• **Dreyer2023 (External Eval)** | Src: 9 / 29 / 60<br>**Eval: 85** | Dreyer: 1 session/subj<br>(80 trials/subj = 6,800) | $B = 0$<br>(Zero-Shot) | 108 neural trajectories<br>+ 9 classical CSP+rLDA fits |
-| **Regime I: Study 1B**<br>5 Risk Objectives | [`cross-subject-mi-eeg`](file:///home/antigravity/repos/cross-subject-mi-eeg)<br>`origin/hpc-results/paper1-risk-v1` | • Source Pool (`S60` Nested CV)<br>• **Dreyer2023 (External Eval)** | CV: 60 (5-fold)<br>**Eval: 85** | 33,183 source trials<br>6,800 external trials | $B = 0$<br>(Zero-Shot) | **90 / 90 (100%)**<br>(75 nested CV + 15 external) |
-| **Regime I: Study 1C**<br>Fixed-Budget Mix | [`cross-subject-mi-eeg`](file:///home/antigravity/repos/cross-subject-mi-eeg)<br>`origin/hpc/paper1-composition-v2` | • 15 Source Cells (`2,592` matched vs `33,183` all)<br>• **Dreyer2023 (External Eval)** | Src: 9 / 29 / 51 / 60<br>**Eval: 85** | Strictly matched **2,592** source trials vs. all | $B = 0$<br>(Zero-Shot) | **90 / 90 (100%)** classical<br>(75 dev + 15 external final)<br>+ 99/540 neural in-progress |
-| **Regime II: Study 2A–D**<br>Longitudinal & Phase | [`few-shot-mi-eeg`](file:///home/antigravity/repos/few-shot-mi-eeg)<br>`paper2-alignment-integrated-revision` | • **Kumar2024** (`dev6` + `primary12`)<br>• **BNCI2014-001** (`external9`) | Kumar: **18** (6+12)<br>BNCI: **9** | Kumar: 6 sess/subj (108)<br>BNCI: 2 sess/subj (18) | $B \in \{4, 8, 12, 16, 20\}$<br>(Primary: $B=20$) | **544** normalization fits<br>+ **148** phase-window fits<br>+ **150** V2/V3 neural tasks |
-| **Regime III: Rounds 1–13**<br>Prefix Calibration | [`research3`](file:///home/antigravity/repos/research3)<br>`origin/paper3-results` & `origin/main` | • Multi-cohort source `f0`<br>• **Stieger2021** (Holdout)<br>• **Pan2023** (External)<br>• **Weibo2014** (External) | Stieger: **11**<br>Pan: **14**<br>Weibo: **10**<br>(Total Eval: **35**) | 143 target sessions<br>429 session–seed cells<br>(3 seeds: 20261018–20) | Prefix $B \in$<br>$\{4, 8, 12, 16, 20\}$ | **>5,600 completed tasks**<br>(R2: 66, R3: 174, R4: 204, R5: 105, R6: 198, R7: 273, R8: 2,835, R9: 1,548, R10: 429, R12: 78, R13: 96) |
+| **Regime I: Study 1A**<br>Cohort Scaling | [`cross-subject-mi-eeg`](https://github.com/jackzhu119/cross-subject-mi-eeg)<br>`ELIGIBLE_V3_RESULTS_20261018` | • BNCI2014-001 (Source `S9`)<br>• Yang2025 (Source `+20`/`+51`)<br>• **Dreyer2023 (External Eval)** | Src: 9 / 29 / 60<br>**Eval: 85** | Dreyer: 1 session/subj<br>(80 trials/subj = 6,800) | $B = 0$<br>(Zero-Shot) | 108 neural trajectories<br>+ 9 classical CSP+rLDA fits |
+| **Regime I: Study 1B**<br>5 Risk Objectives | [`cross-subject-mi-eeg`](https://github.com/jackzhu119/cross-subject-mi-eeg)<br>`origin/hpc-results/paper1-risk-v1` | • Source Pool (`S60` Nested CV)<br>• **Dreyer2023 (External Eval)** | CV: 60 (5-fold)<br>**Eval: 85** | 33,183 source trials<br>6,800 external trials | $B = 0$<br>(Zero-Shot) | **90 / 90 (100%)**<br>(75 nested CV + 15 external) |
+| **Regime I: Study 1C**<br>Fixed-Budget Mix | [`cross-subject-mi-eeg`](https://github.com/jackzhu119/cross-subject-mi-eeg)<br>`origin/hpc/paper1-composition-v2` | • 15 Source Cells (`2,592` matched vs `33,183` all)<br>• **Dreyer2023 (External Eval)** | Src: 9 / 29 / 51 / 60<br>**Eval: 85** | Strictly matched **2,592** source trials vs. all | $B = 0$<br>(Zero-Shot) | **90 / 90 (100%)** classical<br>(75 dev + 15 external final)<br>+ 99/540 neural in-progress |
+| **Regime II: Study 2A–D**<br>Longitudinal & Phase | [`few-shot-mi-eeg`](https://github.com/jackzhu119/few-shot-mi-eeg)<br>`paper2-alignment-integrated-revision` | • **Kumar2024** (`dev6` + `primary12`)<br>• **BNCI2014-001** (`external9`) | Kumar: **18** (6+12)<br>BNCI: **9** | Kumar: 6 sess/subj (108)<br>BNCI: 2 sess/subj (18) | $B \in \{4, 8, 12, 16, 20\}$<br>(Primary: $B=20$) | **544** normalization fits<br>+ **148** phase-window fits<br>+ **150** V2/V3 neural tasks |
+| **Regime III: Rounds 1–13**<br>Prefix Calibration | [`research3`](https://github.com/jackzhu119/research3)<br>`origin/paper3-results` & `origin/main` | • Multi-cohort source `f0`<br>• **Stieger2021** (Holdout)<br>• **Pan2023** (External)<br>• **Weibo2014** (External) | Stieger: **11**<br>Pan: **14**<br>Weibo: **10**<br>(Total Eval: **35**) | 143 target sessions<br>429 session–seed cells<br>(3 seeds: 20261018–20) | Prefix $B \in$<br>$\{4, 8, 12, 16, 20\}$ | **>5,600 completed tasks**<br>(R2: 66, R3: 174, R4: 204, R5: 105, R6: 198, R7: 273, R8: 2,835, R9: 1,548, R10: 429, R12: 78, R13: 96) |
 
 ---
 
@@ -172,7 +172,7 @@ On the prespecified primary contrast (`tail_consistency - erm` on `min_recall`),
 | | `s60-matched` (50:50 mix) | 9 BNCI + 51 Yang | **2,592** | Dreyer (85) | **64.82** | **64.03** | **65.62** | **46.71** | **1.59** | **Dual-cohort fixed 2,592 trials: +11.00 pp MinRec, +4.19 pp BA** |
 | | `s60-all` (Unconstrained) | 9 BNCI + 51 Yang | 33,183 | Dreyer (85) | **65.47** | 65.41 | 65.53 | **47.68** | 0.12 | $12.8\times$ more trials over `s60-matched`: only +0.97 pp MinRec |
 
-![Figure 2: Regime I Zero-Shot Cohort Scaling, Fixed-Budget Composition, and Objectives](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig2_Regime1_ZeroShot_Cohort_vs_Objective.png)
+![Figure 2: Regime I Zero-Shot Cohort Scaling, Fixed-Budget Composition, and Objectives](../../figures/png/Fig2_Regime1_ZeroShot_Cohort_vs_Objective.png)
 
 ---
 
@@ -227,7 +227,7 @@ In the parallel neural calibration campaigns on Kumar2024 (`paper2_hpc_v2_analys
 | **Study 2D: Window Phase** | Conditional ($n=9$): Cue 5 s `[0, 5) s` | **`EA - Full`: +7.85 `[+3.04, +13.66]`** | — | — | — | — | Task 2 s `[2, 4) s`: **+0.13 `[-1.40, +1.92]`** | **Diff: −7.73 `[-12.17, -3.76]`** |
 | (148 Paired Phase Fits) | Metadata-Complete ($n=8$): Cue 5 s | **`EA - Full`: +7.55 `[+2.32, +13.95]`** | — | — | — | — | Task 2 s `[2, 4) s`: **+0.53 `[-1.01, +2.39]`** | **Diff: −7.03 `[-11.84, -2.97]`** |
 
-![Figure 3: Regime II Few-Label Longitudinal Calibration and Mechanisms](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.png)
+![Figure 3: Regime II Few-Label Longitudinal Calibration and Mechanisms](../../figures/png/Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.png)
 
 ---
 
@@ -253,7 +253,7 @@ Why do all post-alignment parameter and kernel updates plateau at the accuracy o
 - Relative to `support_EA`, post-alignment neural and kernel updates still overturned a median of **$D = 8.09\text{ pp}$** (`IQR [1.26, 12.21]`) of query decisions, but **$\kappa_{\text{total}} = 95.35\%$** (`IQR [84.12%, 96.79%]`) of those changes canceled out (`82.54%` within-session + `11.32%` between-session), leaving a median net gain of **$G = +0.01\text{ pp}$** (`IQR [-0.37, +0.15]`)!
 - Strikingly, on Pan2023 ($n=14$ at $B=20$), bias recalibration (`bias`) and cross-fitted stacking (`stack`) achieved the **exact same mean BA (`63.3571%`)**, yet `stack` induced **$4.87\times$ more prediction churn** than `bias` ($D = 11.42\text{ pp}$ vs. $2.35\text{ pp}$). Equal marginal accuracy masks massive differences in decision stability.
 
-![Figure 4: Regime III Neural Churn Audit, Schur Protection, and BA Plateau](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig4_Regime3_Neural_Churn_and_Schur_Protection.png)
+![Figure 4: Regime III Neural Churn Audit, Schur Protection, and BA Plateau](../../figures/png/Fig4_Regime3_Neural_Churn_and_Schur_Protection.png)
 
 #### 4.3.3 Evidence-Retaining Functional Calibration (ERFC) Suppresses Churn and Negative Transfer (Rounds 10, 12, and 13)
 To break free from the 95.35% post-alignment churn trap, **Round 10** evaluated **Evidence-Retaining Functional Calibration (ERFC, `profile-v1/a0.3-c0.1`)** across all 35 target participants (Stieger $n=11$, Pan $n=14$, Weibo $n=10$; 429 session–seed cells) (**Table 5**, **Figure 5**).
@@ -316,7 +316,7 @@ Finally, **Round 12** (78/78 tasks on the 8-participant development cohort) conf
 | | **Mechanism**: Updated Query Trial Fraction (%) | **14.48** | **99.30** | **−84.83 pp** | **`[-90.04, -79.44]`** | **0.0020** | **0.0195** ($m=18$) |
 | | **Mechanism**: Neg-Transfer Session Fraction vs. EA (%) | **3.33** | **16.67** | **−13.33 pp** | `[-30.00, +0.00]` | 0.2500 | 0.5000 ($m=18$) |
 
-![Figure 5: Regime III ERFC Selectivity and Risk Control](/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9/Fig5_Regime3_ERFC_Selectivity_Tradeoff.png)
+![Figure 5: Regime III ERFC Selectivity and Risk Control](../../figures/png/Fig5_Regime3_ERFC_Selectivity_Tradeoff.png)
 
 ---
 

@@ -5,8 +5,12 @@ import html
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(REPO_ROOT, "figures")
-ART_DIR = os.environ.get("ARTIFACT_DIR", "/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/bbe600d8-1b51-4a32-9316-d3c92c0cf7e9")
-os.makedirs(OUT_DIR, exist_ok=True)
+SVG_DIR = os.path.join(OUT_DIR, "svg")
+PNG_DIR = os.path.join(OUT_DIR, "png")
+PDF_DIR = os.path.join(OUT_DIR, "pdf")
+ART_DIR = os.environ.get("ARTIFACT_DIR", "")
+for d in (SVG_DIR, PNG_DIR, PDF_DIR):
+    os.makedirs(d, exist_ok=True)
 
 def esc(s):
     return html.escape(str(s))
@@ -41,16 +45,16 @@ class SVGCanvas:
 
     def save(self, name):
         svg_str = "\n".join(self.elements) + "\n</svg>\n"
-        svg_path = os.path.join(OUT_DIR, f"{name}.svg")
-        png_path = os.path.join(OUT_DIR, f"{name}.png")
-        pdf_path = os.path.join(OUT_DIR, f"{name}.pdf")
+        svg_path = os.path.join(SVG_DIR, f"{name}.svg")
+        png_path = os.path.join(PNG_DIR, f"{name}.png")
+        pdf_path = os.path.join(PDF_DIR, f"{name}.pdf")
         with open(svg_path, "w", encoding="utf-8") as f:
             f.write(svg_str)
         subprocess.run(["rsvg-convert", "-f", "png", "-d", "300", "-p", "300", "-o", png_path, svg_path], check=True)
         subprocess.run(["rsvg-convert", "-f", "pdf", "-o", pdf_path, svg_path], check=True)
-        if os.path.isdir(ART_DIR):
+        if ART_DIR and os.path.isdir(ART_DIR):
             shutil.copyfile(png_path, os.path.join(ART_DIR, f"{name}.png"))
-        print(f"Rendered {name}.png and {name}.pdf")
+        print(f"Rendered {name}.svg, {name}.png, and {name}.pdf")
 
 def draw_hbar_panel(c, px, py, pw, ph, title, subtitle, xlabel, items, vmin, vmax):
     c.text(px + pw/2, py - 24, title, size=12, weight="bold", fill="#111")

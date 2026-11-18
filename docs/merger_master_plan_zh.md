@@ -1,7 +1,7 @@
 # 三仓库科研成果合并总体规划书（科学主线、统计对齐、数据取舍与仓库整合）
 
 > [!IMPORTANT]
-> **合并的核心目标**：将您前期独立开展的三个仓库（[`cross-subject-mi-eeg`](file:///home/antigravity/repos/cross-subject-mi-eeg)、[`few-shot-mi-eeg`](file:///home/antigravity/repos/few-shot-mi-eeg)、[`research3`](file:///home/antigravity/repos/research3)）从“三个独立的实验项目”无缝升华为**“一套数学符号统一、评价算子贯通、层层递进回答同一个核心科学问题的高创新性研究体系”**，同时在**绝不重跑任何新实验**的前提下，妥善处理三仓库之间的指标差异、模型差异、已完成/未完成分支取舍以及 GitHub 仓库归档结构。
+> **合并的核心目标**：将您前期独立开展的三个仓库（[`cross-subject-mi-eeg`](https://github.com/jackzhu119/cross-subject-mi-eeg)、[`few-shot-mi-eeg`](https://github.com/jackzhu119/few-shot-mi-eeg)、[`research3`](https://github.com/jackzhu119/research3)）从“三个独立的实验项目”无缝升华为**“一套数学符号统一、评价算子贯通、层层递进回答同一个核心科学问题的高创新性研究体系”**，同时在**绝不重跑任何新实验**的前提下，妥善处理三仓库之间的指标差异、模型差异、已完成/未完成分支取舍以及 GitHub 仓库归档结构。
 
 ---
 
@@ -78,30 +78,30 @@ flowchart TD
 
 ## 三、 工程与代码仓库物理合并规划（GitHub Repository Merger Blueprint）
 
-如果您希望不仅在论文层面合并，还在 GitHub 上把三个仓库整理为一个**清晰、可审计、审稿人友好的统一代码与数据工程包**，我为您设计了一套**无损归档合并架构**（已在本地 `/home/antigravity/unified_paper` 准备好基础结构，随时可同步至 GitHub）：
+如果您希望不仅在论文层面合并，还在 GitHub 上把三个仓库整理为一个**清晰、可审计、审稿人友好的统一代码与数据工程包**，我们采用以下**无损归档合并架构**（对应仓库 `jackzhu119/unified-mi-eeg-calibration` 的归类结构）：
 
 ```text
-unified-mi-eeg-error-redistribution/          # 统一旗舰项目根目录（可作为新仓库或主仓库新分支）
+unified-mi-eeg-calibration/                   # 统一旗舰项目根目录
 ├── README.md                                 # 英文项目总览、三大范式核心发现与一键复现指南
 ├── README_ZH.md                              # 中文项目总览与三仓库数据谱系映射说明
-├── manuscript/                               # 完整论文与投稿文件包
-│   ├── Unified_MIEEG_Manuscript_EN.md        # 英文完整主稿（含表 1-6 与图 1-5 引用）
-│   ├── Unified_MIEEG_Manuscript_EN.pdf       # 编译好的英文排版预览 PDF (859 KB)
-│   ├── Unified_MIEEG_Manuscript_EN.docx      # 可编辑英文 Word 主稿 (615 KB)
-│   ├── Unified_MIEEG_Manuscript_ZH.md        # 中文完整对照稿
-│   └── Unified_MIEEG_Manuscript_ZH.docx      # 可编辑中文 Word 主稿 (586 KB)
-├── figures/                                  # 5 幅出版级组合图（300 DPI PNG + 矢量 PDF + 可编辑 SVG）
-│   ├── Fig1_Three_Regime_Synthesis.{png,pdf,svg}
-│   ├── Fig2_Regime1_ZeroShot_Cohort_vs_Objective.{png,pdf,svg}
-│   ├── Fig3_Regime2_FewLabel_Alignment_and_Mechanisms.{png,pdf,svg}
-│   ├── Fig4_Regime3_Neural_Churn_and_Schur_Protection.{png,pdf,svg}
-│   └── Fig5_Regime3_ERFC_Selectivity_Tradeoff.{png,pdf,svg}
+├── manuscript/                               # 完整论文与补充材料文件包（按语种与类型归类）
+│   ├── en/                                   # 英文主稿（Markdown / PDF / Word）
+│   ├── zh/                                   # 中文对照主稿（Markdown / Word）
+│   └── supplementary/                        # 补充材料（Markdown / PDF / Word，表 S1–S8）
+├── docs/                                     # 项目整合规划与 88 分支全量实验盘点报告
+│   ├── master_experimental_synthesis_zh.md
+│   └── merger_master_plan_zh.md
+├── figures/                                  # 5 幅出版级组合图（按格式归类：png / pdf / svg）
+│   ├── png/                                  # 300 DPI PNG 预览图
+│   ├── pdf/                                  # 矢量 PDF 图件
+│   └── svg/                                  # 可编辑 SVG 矢量源文件
 ├── evidence_archive/                         # 从三仓库提取锁定的只读结果快照（附原始 Git Commit SHA 溯源）
 │   ├── DATA_LINEAGE_MANIFEST.json            # 记录每个 CSV/JSON 对应原三仓库的精确分支与 Commit SHA
 │   ├── regime1_zero_shot/                    # 源自 cross-subject-mi-eeg (ELIGIBLE_V3 + risk-v1 + composition-v2)
 │   ├── regime2_longitudinal/                 # 源自 few-shot-mi-eeg (paper2-alignment-integrated-revision + V2/V3)
 │   └── regime3_prefix_erfc/                  # 源自 research3 (Rounds 1-13 verified tables & BMTE error grid)
 └── scripts/                                  # 纯后处理复现与制图脚本（零训练、零 GPU 依赖，秒级运行）
+    ├── assemble_package.py                   # 结构归类、溯源清单生成与补充材料编译脚本
     ├── build_svg_figures.py                  # 一键从归档数据重新生成全部 5 幅 SVG/PNG/PDF 出版级图表
     └── verify_all_tables.py                  # 一键核验正文表 1-6 全部统计量与原始仓库 CSV 的一致性
 ```
