@@ -1,0 +1,21 @@
+{
+  "version": "er-hfc-development-v1",
+  "historical_outcomes_seen": true,
+  "registration_status": "locked_for_new_development; E04_requires_independent_public_registration",
+  "seed": 20261126,
+  "hypotheses": [
+    {"id":"H01","experiment":"E01","claim":"At B20 the protected third stage adds BA beyond alignment plus intercept","primary":"full_er_hfc - stage12","refuter":"no paired BA gain compared with both S1+S2 and ordinary EA+threshold"},
+    {"id":"H02a","experiment":"E02","claim":"At B20 a nested d4 readout trades bias for lower variance compared with d32","primary":"d4 - d32 on common future","refuter":"gain disappears at matched support logit movement or reverses by cohort"},
+    {"id":"H02b","experiment":"E05","claim":"At longer B the high-dimensional readout can catch or exceed d4","primary":"persistent signed crossing of d32 - d4 interval probabilities","refuter":"no concentrated persistent crossing or too few paired query observations"},
+    {"id":"H02c","experiment":"E06","claim":"Budget and regularized effective dimension improve severe-loss prediction","primary":"left-out cohort risk AUC and log loss","refuter":"unchanged or worse held-out discrimination and accuracy"},
+    {"id":"H03","experiment":"E03","claim":"The new dual gate improves the correction-preservation tradeoff beyond simply applying fewer or smaller updates","primary":"full_er_hfc vs matched MAP, count-and-mass matched random and confidence","refuter":"no benefit under matched update budget; certificate poorly predicts future useful change"},
+    {"id":"H04","experiment":"E04","claim":"Positive held-out BA improvement and independently measurable gate protection","primary":"B20 CSP full vs S1+S2; safety vs always-on MAP","superiority_pp":1,"ni_pp":1,"severe_loss_pp":2,"severe_risk_reduction_pp":3,"refuter":"failure of predeclared participant thresholds, missed coverage, or unproven lineage"},
+    {"id":"H06","experiment":"E06","claim":"Prefix statistics can select effective adaptation complexity","primary":"nested leave-one-cohort-out adaptive - fixed d4 BA","refuter":"adaptive tuning fails to beat fixed baselines; oracle shows no stable headroom"},
+    {"id":"H07","experiment":"E07","claim":"Calibration complexity interacts with label contamination","primary":"known shared flip masks, noise minus each arm's clean performance","refuter":"similar or reversed degradation"},
+    {"id":"H08","experiment":"E08","claim":"Useful threshold or residual calibration can decay over chronological position","primary":"fixed B20 coefficients, three consecutive windows","refuter":"no temporal pattern with credible precision"},
+    {"id":"H09","experiment":"E09","claim":"Rest/task reference alpha alters drift at fixed future and history IDs","primary":"alpha0.5 vs single sources and paired shuffle","refuter":"no change after same-history perturbation or simple reference sufficient"},
+    {"id":"H10","experiment":"E10","claim":"Schedule and phase specificity can limit generalization of EEG outcome estimates","primary":"known person-held-out position comparator and paired window audit","refuter":"no detectable schedule ability under measured configurations; other confounds remain open"},
+    {"id":"H11","experiment":"E11","claim":"A matched B/d relationship transfers across CSP and MDM readouts","primary":"paired model-by-d difference in differences","refuter":"large architecture-specific effect; frozen neural replicate unavailable"},
+    {"id":"H12","experiment":"E12","claim":"Protection or rejection has a measurable engineering payoff","primary":"runtime/coverage/error tradeoff and fixed-coverage controls","refuter":"small protective value relative to cost, or no advantage over simple confidence"}
+  ]
+}

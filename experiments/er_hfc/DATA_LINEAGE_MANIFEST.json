@@ -1,0 +1,18 @@
+{
+  "version": "er-hfc-development-v1",
+  "roles": {
+    "forenzo": {"role":"source training only; calibrated and held-out members disjoint in each fold","identifier":"10.1109/TBME.2023.3298957","people":25,"source_archive_sha256":"d2686f811cd1c06870e6f195c41813f29eddb71e1bc64e8e62de55500de1366a","repeated_target_role":false},
+    "stieger": {"role":"development","identifier":"10.6084/m9.figshare.13123148.v1","people":62,"sessions":124,"repeated_people":"same 62 in sessions 3 and 4","phase":"registered cue minus 1s, cue first second, optional feedback first second","files":{"session3":"3d59f7da745fb8a9b324eeb9a8c1a080bfff8235ac58bd996e76c3218bc03a36","session4":"e53a705e208fda52b3ef8b7416fa9ee8cb7715793ee4aabd29bc5cdfc8d285e0"}},
+    "openbmi": {"role":"development / schedule sensitivity","identifier":"10.1093/gigascience/giz002","people":54,"sessions":108,"repeated_people":"same 54 across days","risk":"shared scheduled trial labels; live or randomized cue causality not established","sha256":"0e2f0703c4d4e6504bb305d226b313438ebed16ba2a8d97d92a183e994857d22"},
+    "cho2017": {"role":"development / published-order replay","identifier":"10.1093/gigascience/gix034","people":52,"sessions":52,"risk":"physical order not independently verified; excluded from natural drift","sha256":"307c57188793b4ed1bebc8a7cc8eab0b6a1656068289099ae0ac0f910f8d8101"},
+    "pan2023": {"role":"historical ERFC target, unsuitable for E04","identifier":"10.7910/DVN/251NOW"},
+    "pan2025": {"role":"prior rest-reference validation plan seen; held out of this protocol and E04 eligibility","identifier":"10.7910/DVN/GH74ZG","n_verified_results_here":0,"participant_overlap_with_pan2023":"unresolved"},
+    "zhou_candidate": {"role":"metadata-only candidate; unopened outcome","identifier":"10.21227/f1c7-7x89","snapshot":"NEMAR nm000237 v1.0.3","people":20,"days":7,"license":"CC-BY-4.0","needs":"prepare frozen chronological covariance package and verify independent unused outcome lineage"},
+    "neural_assets": {"role":"E11 archived source weight and embedding inventory only","verified_examples":"Research10 Models-01 and Embed-Graz-01 contain weight/reference/feature fingerprints","pretraining_overlap":"unresolved","EEGNet_and_foundation_default":"not_scored"}
+  },
+  "physical_stimulus_clock":"Prepared event fields audited; absolute trigger truth requires raw-source checks, especially OpenBMI.",
+  "independent_participant_rule":"Distinct publisher train/target records. Cross-release participant identity is not provable from dataset prefix alone.",
+  "source_vendor":{"repository":"jackzhu119/research3","commit":"ea3bc961c6f4ceb76f75a044182d7b24d7c9c48c","relative":"experiments/round10_20261026/paper3r10/algorithm.py","sha256":"6fa50fe53ee4e80b3fe9e500b12cc14eb54b5e0bfde8afac1c30611fadba1e48"},
+  "historical_stop":"Research3 Round12 STOP retained. Round13 exploratory complete. No reproduction of stopped queue is scheduled.",
+  "e04_release":null
+}
